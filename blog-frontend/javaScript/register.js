@@ -23,20 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(response.ok){
                 messageBox.innerText = "Registration Successful. You can login now!";
-                messageBox.style.color = "green";
+                messageBox.className = "message message-success";
                 form.reset();
             }
             else{
                 const error = await response.text();
                 messageBox.innerText = "Error: " +error;
-                messageBox.style.color = "red";
+                messageBox.className = "message message-error";
             }
 
         }
         catch(err){
             console.error(err);
             messageBox.innerText = "Something went wrong";
-            messageBox.style.color = "red";
+            messageBox.className = "message message-error";
         }
     });
 });

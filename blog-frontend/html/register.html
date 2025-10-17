@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Registration - Blog Website</title>
+    <link rel="stylesheet" href="/blog-frontend/css/styles.css">
+    <link rel="stylesheet" href="/blog-frontend/css/auth.css">
 </head>
 <body>
-    <h1>Registration Form</h1>
-    <form id="register-form">
-        <label for="username">Username: </label>
-        <input type="text" id="username" name="username" required><br><br>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Join our community of writers and readers</p>
+            </div>
+            
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" id="username" name="username" class="form-input" placeholder="Choose a username" required>
+                </div>
 
-        <label for="email">Email: </label>
-        <input type="email" id="email" name="email" required><br><br>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                </div>
 
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" required><br><br>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Create a password" required>
+                </div>
 
-        <button type="submit">Register</button>
+                <button type="submit" class="btn btn-primary">Create Account</button>
+            </form>
 
+            <div class="auth-footer">
+                <p>Already have an account? <a href="login.html">Login here!</a></p>
+            </div>
+        </div>
+    </div>
 
-    </form>
-    <p id="message"></p>
-    <p>Already have an account? <br><a href="login.html">Login here!</a></p>
-    <script src="/javaScript/register.js"></script>
+    <div id="message"></div>
+    <script src="/blog-frontend/javaScript/register.js"></script>
 </body>
 </html>

@@ -3,6 +3,7 @@ package com.example.blog_website.service.impl;
 import com.example.blog_website.model.User;
 import com.example.blog_website.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -26,8 +27,8 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .withUsername(user.getEmail())
                 .password(user.getPassword())
                 .authorities(user.getRoles().stream()
-                        .map(role -> role.getName())
-                        .toArray(String[]::new))
+                        .map(role -> new SimpleGrantedAuthority(role.getName()))
+                        .toList())
                 .build();
     }
 }

@@ -7,6 +7,8 @@ import com.example.blog_website.repository.UserRepository;
 import com.example.blog_website.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,5 +37,22 @@ public class UserController {
     @GetMapping("/users")
     public List<User> getAllUsers(){
         return userRepository.findAll();
+    }
+
+    @GetMapping("/users/me")
+    public ResponseEntity<?> getCurrentUser(Authentication authentication){
+        String email = authentication.getName();
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found!"));
+
+        return ResponseEntity.ok(user);
+    }
+
+    @DeleteMapping("/me")
+    @PreAuthorize("hasAnyRole('AUTHOR', 'ADMIN')")
+    public ResponseEntity<String> deleteOwnAccount(Authentication authentication){
+        String email = authentication.getName();
+        userService.deleteOwnAccount(email);
+        return ResponseEntity.ok("Your account has been deleted successfully.");
     }
 }

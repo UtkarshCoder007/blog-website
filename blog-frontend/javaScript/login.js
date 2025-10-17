@@ -22,19 +22,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 const data = await response.json();
                 localStorage.setItem("token", data.token);
                 messageBox.innerText = "Login successful!";
-                messageBox.style.color = "green";
+                messageBox.className = "message message-success";
                 window.location.href = "dashboard.html";
             }
             else{
                 const error = await response.text();
                 messageBox.innerText = "Error: "+error;
-                messageBox.style.box = "red";
+                messageBox.className = "message message-error";
             }
         }
         catch(err){
             console.error(err);
             messageBox.innerText = "Something went wrong!";
-            messageBox.style.color = "red";
+            messageBox.className = "message message-error";
         }
     });
 });

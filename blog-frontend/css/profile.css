@@ -1,0 +1,392 @@
+/* Profile Page Styles */
+
+.profile-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--spacing-6) var(--spacing-4);
+}
+
+.profile-header {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--white);
+  padding: var(--spacing-8);
+  border-radius: var(--radius-xl);
+  margin-bottom: var(--spacing-8);
+  text-align: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.profile-header h2 {
+  margin: 0 0 var(--spacing-2) 0;
+  font-size: var(--font-size-2xl);
+  font-weight: 600;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-6);
+  margin-bottom: var(--spacing-8);
+}
+
+.profile-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+}
+
+.profile-card-header {
+  padding: var(--spacing-6);
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.profile-card-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.profile-card-body {
+  padding: var(--spacing-6);
+}
+
+.profile-field {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-3) 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-field-label {
+  font-weight: 500;
+  color: var(--gray-700);
+  font-size: var(--font-size-sm);
+}
+
+.profile-field-value {
+  color: var(--gray-900);
+  font-weight: 500;
+}
+
+.profile-field-value.role {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Actions Section */
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+  margin-bottom: var(--spacing-8);
+  padding: var(--spacing-6);
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+}
+
+.action-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2);
+  flex: 1;
+  min-width: 200px;
+}
+
+.action-group-title {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--gray-700);
+  margin: 0 0 var(--spacing-2) 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* My Posts Section */
+.my-posts-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-6);
+  padding-bottom: var(--spacing-3);
+  border-bottom: 2px solid var(--gray-200);
+}
+
+.section-title {
+  font-size: var(--font-size-xl);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.posts-count {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: var(--spacing-1) var(--spacing-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+}
+
+.my-posts-grid {
+  display: grid;
+  gap: var(--spacing-4);
+}
+
+.my-post-card {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.my-post-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.my-post-card-header {
+  padding: var(--spacing-4);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.my-post-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+  flex: 1;
+}
+
+.my-post-date {
+  color: var(--gray-500);
+  font-size: var(--font-size-xs);
+  margin-left: var(--spacing-3);
+  white-space: nowrap;
+}
+
+.my-post-card-body {
+  padding: var(--spacing-4);
+}
+
+.my-post-content {
+  color: var(--gray-700);
+  line-height: 1.6;
+  margin: 0 0 var(--spacing-4) 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.my-post-actions {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.edit-button, .delete-button {
+  padding: var(--spacing-2) var(--spacing-4);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  border: 1px solid;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.edit-button {
+  background-color: var(--white);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.edit-button:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.delete-button {
+  background-color: var(--white);
+  color: var(--danger-color);
+  border-color: var(--danger-color);
+}
+
+.delete-button:hover {
+  background-color: var(--danger-color);
+  color: var(--white);
+}
+
+/* Create Post Section */
+.create-post-section {
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  margin-bottom: var(--spacing-8);
+}
+
+.create-post-header {
+  padding: var(--spacing-6);
+  background-color: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.create-post-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  color: var(--gray-900);
+  margin: 0;
+}
+
+.create-post-form {
+  padding: var(--spacing-6);
+}
+
+.create-post-form .form-group {
+  margin-bottom: var(--spacing-6);
+}
+
+.create-post-form .form-input {
+  padding: var(--spacing-4);
+  font-size: var(--font-size-base);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-lg);
+  transition: all 0.3s ease;
+}
+
+.create-post-form .form-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgb(37 99 235 / 0.1);
+}
+
+.create-post-form .form-textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.create-post-form .btn {
+  width: 100%;
+  padding: var(--spacing-4);
+  font-size: var(--font-size-base);
+  font-weight: 600;
+}
+
+/* Empty States */
+.empty-posts {
+  text-align: center;
+  padding: var(--spacing-12);
+  color: var(--gray-500);
+}
+
+.empty-posts-icon {
+  font-size: var(--font-size-4xl);
+  margin-bottom: var(--spacing-4);
+  opacity: 0.5;
+}
+
+.empty-posts h3 {
+  font-size: var(--font-size-lg);
+  color: var(--gray-600);
+  margin-bottom: var(--spacing-2);
+}
+
+.empty-posts p {
+  margin: 0;
+  color: var(--gray-500);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-container {
+    padding: var(--spacing-4) var(--spacing-3);
+  }
+  
+  .profile-header {
+    padding: var(--spacing-6);
+  }
+  
+  .profile-info {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-4);
+  }
+  
+  .profile-actions {
+    flex-direction: column;
+  }
+  
+  .action-group {
+    min-width: auto;
+  }
+  
+  .my-post-card-header {
+    flex-direction: column;
+    gap: var(--spacing-2);
+  }
+  
+  .my-post-date {
+    margin-left: 0;
+  }
+  
+  .my-post-actions {
+    justify-content: center;
+  }
+  
+  .create-post-form {
+    padding: var(--spacing-4);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container {
+    padding: var(--spacing-3) var(--spacing-2);
+  }
+  
+  .profile-header h2 {
+    font-size: var(--font-size-xl);
+  }
+  
+  .profile-card-body {
+    padding: var(--spacing-4);
+  }
+  
+  .profile-field {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
+  
+  .my-post-actions {
+    flex-direction: column;
+  }
+  
+  .edit-button, .delete-button {
+    width: 100%;
+    text-align: center;
+  }
+}

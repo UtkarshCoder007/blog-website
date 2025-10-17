@@ -6,6 +6,14 @@ import com.example.blog_website.model.User;
 import com.example.blog_website.repository.UserRepository;
 import com.example.blog_website.config.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
+
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -31,7 +39,12 @@ public class AuthController {
         if(!passwordEncoder.matches(request.getPassword(), user.getPassword())){
             throw new RuntimeException("Invalid credentials!");
         }
-        String token = jwtUtil.generateToken(user.getEmail());
+
+        List<SimpleGrantedAuthority> authorities = user.getRoles().stream()
+                .map(role -> new SimpleGrantedAuthority(role.getName()))
+                .collect(Collectors.toList());
+
+        String token = jwtUtil.generateToken(user.getEmail(), authorities);
         return new LoginResponse(token);
     }
 }

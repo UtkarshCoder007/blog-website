@@ -3,12 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Dashboard - Blog Website</title>
+    <link rel="stylesheet" href="/blog-frontend/css/styles.css">
+    <link rel="stylesheet" href="/blog-frontend/css/dashboard.css">
 </head>
 <body>
-    <h1>Dashboard</h1>
-    <p id="welcome-message"></p>
-    <button id="logout-btn">Logout</button>
-    <script src="/javaScript/dashboard.js"></script>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Blog Website</h1>
+                <nav class="nav">
+                    <button id="profile-btn" class="btn btn-primary">Profile</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="dashboard-container">
+            <div class="dashboard-header">
+                <div>
+                    <h1 class="dashboard-title">Dashboard</h1>
+                    <p class="dashboard-subtitle">Discover and engage with amazing content</p>
+                </div>
+            </div>
+
+            <div class="welcome-message">
+                <h2 id="welcome-message">Welcome back!</h2>
+                <p>You are successfully logged in and ready to explore.</p>
+            </div>
+
+            <section class="posts-section">
+                <div class="posts-header">
+                    <h2 class="posts-title">Latest Posts</h2>
+                    <span class="posts-count" id="posts-count"></span>
+                </div>
+                <div id="posts-container" class="posts-grid">
+                    <!-- Posts will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="/blog-frontend/javaScript/dashboard.js"></script>
 </body>
 </html>

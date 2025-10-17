@@ -2,6 +2,7 @@ package com.example.blog_website.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
@@ -32,6 +33,13 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/auth/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/posts", "/api/posts/{id}").permitAll()
+                        .requestMatchers("/api/posts/my-posts").hasRole("AUTHOR")
+                        .requestMatchers(HttpMethod.POST, "/api/posts").hasRole("AUTHOR")
+                        .requestMatchers(HttpMethod.PUT, "/api/posts{id}").hasRole("AUTHOR")
+                        .requestMatchers(HttpMethod.DELETE, "/api/posts{id}").hasAnyRole("AUTHOR", "ADMIN")
+                        .requestMatchers("/api/users/me").hasAnyRole("AUTHOR", "ADMIN")
+                        .requestMatchers("/api/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Blog Website</title>
+    <link rel="stylesheet" href="/blog-frontend/css/styles.css">
+    <link rel="stylesheet" href="/blog-frontend/css/profile.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1 class="logo">Blog Website</h1>
+                <nav class="nav">
+                    <button id="dashboard-btn" class="btn btn-secondary">Dashboard</button>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="profile-container">
+            <div class="profile-header">
+                <h2 id="welcome-message">Welcome!</h2>
+                <p>Manage your account and content</p>
+            </div>
+
+            <div class="profile-info">
+                <div class="profile-card">
+                    <div class="profile-card-header">
+                        <h3 class="profile-card-title">Account Information</h3>
+                    </div>
+                    <div class="profile-card-body">
+                        <div class="profile-field">
+                            <span class="profile-field-label">Username</span>
+                            <span class="profile-field-value" id="username"></span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="profile-field-label">Email</span>
+                            <span class="profile-field-value" id="email"></span>
+                        </div>
+                        <div class="profile-field">
+                            <span class="profile-field-label">Role</span>
+                            <span class="profile-field-value role" id="role"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-actions">
+                <div class="action-group">
+                    <h4 class="action-group-title">Account Actions</h4>
+                    <button id="delete-button" class="btn btn-danger">Delete Account</button>
+                </div>
+                <div id="author-actions" class="action-group">
+                    <!-- Author-specific actions will be added here -->
+                </div>
+                <div id="admin-actions" class="action-group">
+                    <!-- Admin-specific actions will be added here -->
+                </div>
+            </div>
+
+            <section id="create-post-section" class="create-post-section" style="display: none;">
+                <div class="create-post-header">
+                    <h3 class="create-post-title">Create New Post</h3>
+                </div>
+                <form id="create-post-form" class="create-post-form">
+                    <div class="form-group">
+                        <label for="title" class="form-label">Post Title</label>
+                        <input type="text" id="title" class="form-input" placeholder="Enter a compelling title" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="content" class="form-label">Post Content</label>
+                        <textarea id="content" class="form-input form-textarea" placeholder="Write your post content here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Post</button>
+                </form>
+            </section>
+
+            <section id="my-posts-section" class="my-posts-section">
+                <div class="section-header">
+                    <h2 class="section-title">My Posts</h2>
+                    <span class="posts-count" id="my-posts-count">0 posts</span>
+                </div>
+                <div id="my-posts" class="my-posts-grid">
+                    <!-- User's posts will be loaded here by JavaScript -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="message"></div>
+    <script src="/blog-frontend/javaScript/profile.js"></script>
+</body>
+</html>

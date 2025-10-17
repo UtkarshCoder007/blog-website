@@ -9,4 +9,8 @@ public interface UserService {
     UserResponseDto registerUser(UserRegistrationDto dto);
     Optional<User> findByUsername(String username);
     Optional<User> findByEmail(String email);
+
+    public void assignRole(Long userId, String roleName);
+    void deleteOwnAccount(String currentEmail);
+    void deleteUserByAdmin(Long userId);
 }

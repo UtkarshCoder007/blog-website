@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Login - Blog Website</title>
+    <link rel="stylesheet" href="/blog-frontend/css/styles.css">
+    <link rel="stylesheet" href="/blog-frontend/css/auth.css">
 </head>
 <body>
-    <h1>Login</h1>
-    <form id="login">
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email" required><br><br>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>Welcome Back</h1>
+                <p>Sign in to your account to continue</p>
+            </div>
+            
+            <form id="login" class="auth-form">
+                <div class="form-group">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" name="email" id="email" class="form-input" placeholder="Enter your email" required>
+                </div>
 
-        <label for="password">Password: </label>
-        <input type="password" id="password" name="password" required><br><br>
+                <div class="form-group">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                </div>
 
-        <button type="submit">Login</button>
-    </form>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+            </form>
 
-    <p>Don't have an account? <a href="register.html">Register here!</a></p>
+            <div class="auth-footer">
+                <p>Don't have an account? <a href="register.html">Register here!</a></p>
+            </div>
+        </div>
+    </div>
 
-    <p id="message"></p>
-    <script src="/javaScript/login.js"></script>
+    <div id="message"></div>
+    <script src="/blog-frontend/javaScript/login.js"></script>
 </body>
 </html>
